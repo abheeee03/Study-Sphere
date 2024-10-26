@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chats</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color:rgb(227, 227, 241);
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 30%;
+            background-color: #071b5e;
+            color: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .contact img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        /* Chat Section */
+        .chat-section {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-header {
+            padding: 15px;
+            background-color: #075e54;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .chat-header img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        /* Messages */
+        .chat-box {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .message {
+            max-width: 60%;
+            padding: 10px 15px;
+            border-radius: 10px;
+            position: relative;
+            word-wrap: break-word;
+        }
+
+        .message.sent {
+            background-color: #dcf8c6;
+            align-self: flex-end;
+        }
+
+        .message.received {
+            background-color: #ffffff;
+            align-self: flex-start;
+        }
+
+        /* Message Input */
+        .input-section {
+            display: flex;
+            padding: 10px;
+            background-color: #f0f0f0;
+            align-items: center;
+            border-top: 1px solid #ddd;
+        }
+
+        .input-section input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            margin-right: 10px;
+        }
+
+        .input-section button {
+            padding: 10px 15px;
+            border: none;
+            background-color: #075e54;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="sidebar">
+        <div class="contact">
+            <img src="https://via.placeholder.com/50" alt="Contact">
+            <span>GROUP CHAT</span>
+        </div>
+    </div>
+
+
+    <div class="chat-section">
+        <div class="chat-box">
+            <div class="message received">HEYY</div>
+            <div class="message sent">Helloo!!</div>
+            <div class="message received">You can do group chat here</div>
+            <div class="message sent">Chats will Appear here</div>
+        </div>         
+            
+        <div class="input-section">
+            <input type ="hii" "how can i help you?"
+            <input type="text" placeholder="Type a message">
+            <button>Send</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

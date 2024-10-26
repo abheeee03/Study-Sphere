@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Assistant</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+    body{
+      background: linear-gradient(135deg, #1798fb 0%, #2D5CFE 100%);
+      color: white;
+    }
+    #chat {
+      background-color: white;
+      width: 600px;
+      height: 700px;
+      border: 1px solid black;
+      margin: 0 auto;
+      position: relative;
+      overflow-y: scroll;
+    }
+
+    #messages {
+      height: 90%;
+      padding: 10px;
+      box-sizing: border-box;
+      overflow-y: scroll;
+    }
+
+    #input-container {
+      height: 10%;
+      padding: 10px;
+      box-sizing: border-box;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+
+    #input {
+      width: 75%;
+      height: 100%;
+    }
+
+    #send-button {
+      width: 20%;
+      height: 100%;
+      margin-center:5%;
+    }
+
+    .user-message {
+      background-color: lightblue;
+      margin-bottom: 10px;
+      color: black;
+    }
+
+    .bot-message {
+      color: black;
+      background-color: lightgreen;
+      margin-bottom: 10px;
+    }
+    h2, p{
+      font-family: "Merriweather", serif;
+  font-weight: 400;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h2>AI Assistant</h2>
+  <p>Try Saying 'Hii'</p>
+  <div id="chat">
+    <div id="messages"></div>
+    <div id="input-container">
+      <input type="text" id="input"/>
+      <button id="send-button">Send</button>
+    </div>
+  </div>
+
+  <script>
+    let messages = document.getElementById("messages");
+    let input = document.getElementById("input");
+    let sendButton = document.getElementById("send-button");
+
+    sendButton.addEventListener("click", sendMessage);
+
+    function sendMessage() {
+      let message = input.value;
+      input.value = "";
+      let messageElement = document.createElement("div");
+      messageElement.innerText = message;
+      messageElement.classList.add("user-message");
+      messages.appendChild(messageElement);
+
+      let botMessage = generateBotMessage(message);
+
+      setTimeout(function() {
+        let botMessageElement = document.createElement("div");
+        botMessageElement.innerText = botMessage;
+        botMessageElement.classList.add("bot-message");
+        messages.appendChild(botMessageElement);
+      }, 1000);
+    }
+
+    function generateBotMessage(message) {
+      let responses = {
+        "hii": "Hii! Its nice to meet you.Is there something i can help you with?",
+        "how are you": "I'm doing well. How are you?",
+        "what is hackathon":"A hackathon is A time-limited event where people collaborate intensively to create innovative solutions, typically using software, hardware or both",
+        "goodbye": "Goodbye!"
+      };
+
+      let response = "I'm sorry, I don't understand.";
+
+      for(let key in responses) {
+        if(message.toLowerCase().includes(key)) {
+          response = responses[key];
+        }
+      }
+
+      return response;
+    }
+  </script>
+</body>
+</html>
