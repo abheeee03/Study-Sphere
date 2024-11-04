@@ -2,4 +2,4 @@
 
 <p>Study Sphere is a Social Media alike Platform to find Your Study Partner <br> Or Random Study Groups In University <br> (Under-Development)</p>
 
-Checkout Here : <a href=" " >Click Here</a>
+Checkout Here : <a href="abheeee03.github.io/Study-Sphere" >Click Here</a>
